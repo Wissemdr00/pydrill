@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/progress.json
+.impeccable/
+PRODUCT.md
+DESIGN.md
+__pycache__/
+*.pyc
