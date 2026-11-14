@@ -1,0 +1,164 @@
+:root {
+  /* Palette — Field-Guide Pattern Index */
+  --rail-bg: #173028;
+  --rail-bg-hover: #1E3E34;
+  --rail-bg-active: #23473C;
+  --rail-border: #0E201A;
+  --rail-ink: #F2F5F0;
+  --rail-muted: #AFC2B8;
+  --rail-accent-dot: #D9A05B;
+
+  --ground: #F3F4EE;
+  --ground-band: #ECEFE6;
+  --surface: #FFFFFF;
+  --surface-subtle: #F8F9F5;
+  --surface-selected: #EAF1EC;
+
+  --ink: #16241F;
+  --ink-secondary: #43544C;
+  --ink-muted: #5A6B63;
+
+  --border: #D9DDD2;
+  --border-strong: #BFC7B8;
+  --border-subtle: #EAECE4;
+
+  /* Rationed semantic state colors */
+  --ok: #1E6B4B;
+  --ok-hover: #16533A;
+  --ok-tint: #E4F2EB;
+  --ok-ink: #145037;
+
+  --warn: #B56B1E;
+  --warn-tint: #FBE9D7;
+  --warn-ink: #8C4E0F;
+
+  --danger: #B83B2A;
+  --danger-tint: #FBEAE7;
+  --danger-ink: #92281A;
+  --danger-border: #E8C5BF;
+
+  --scheduled-tint: #E8EFEA;
+  --scheduled-ink: #274A3B;
+
+  /* Typography */
+  --font-sans: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Fixed Operate-mode rem scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+
+  /* Radius & elevation */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --shadow-subtle: 0 1px 2px rgba(22, 36, 31, 0.05);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-base: 210ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--ground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Browser surfaces themed from palette */
+::selection {
+  background: rgba(30, 107, 75, 0.18);
+  color: var(--ink);
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--ok);
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #54665E;
+  opacity: 1;
+}
+
+a {
+  color: var(--ok);
+  text-underline-offset: 3px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--ok);
+  outline-offset: 2px;
+}
+
+/* Subtle scrollbar aligned to field-guide paper */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5CCB9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A5B09A;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
